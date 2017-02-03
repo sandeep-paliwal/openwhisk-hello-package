@@ -1,4 +1,5 @@
-var util = require("util")
+var util = require("util");
+var http = require('http');
 /**
  * Return a simple greeting message for someone.
  *
@@ -15,6 +16,24 @@ function main(params) {
     }
 
     var place = params.place || 'branch-1';
+    
+    var options = {
+    host: 'action.webscript.io',
+    path: '/ping',
+    qs: { "source" : "action"}
+    };
+
+    callback = function(response) {
+    response.on('data', function (chunk) {
+    });
+
+  response.on('end', function () {
+    console.log("done");
+  });
+}
+
+http.request(options, callback).end();
+    
     return {
         payload:  'Hello, ' + name + ' from ' + place + ' !',
         event: params
