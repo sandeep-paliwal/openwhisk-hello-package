@@ -15,7 +15,7 @@ function main(params) {
         name = params.context.identity.user_id;
     }
 
-    var place = params.place || 'branch-1';
+    var place = params.place || 'Sandeep-1';
     
     var options = {
     host: 'action.webscript.io',
