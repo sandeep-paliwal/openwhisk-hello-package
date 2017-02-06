@@ -19,8 +19,7 @@ function main(params) {
     
     var options = {
     host: 'action.webscript.io',
-    path: '/ping',
-    qs: { "source" : "action"}
+    path: '/ping'
     };
 
     callback = function(response) {
